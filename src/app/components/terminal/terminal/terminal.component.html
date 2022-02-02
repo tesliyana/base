@@ -1,0 +1,69 @@
+<!-- Next Steps -->
+<div class="terminal-title">
+	<h5>The</h5>
+	<h1>Celestine</h1>
+	<h2>Insights</h2>
+</div>
+<!-- <input type="hidden" #selection> -->
+
+<div class="card-container">
+	<button mat-stroked-button (click)="back()" tabindex="0">
+		<mat-icon aria-hidden="false" aria-label="visibility icon">arrow_back</mat-icon>
+		<!-- <span>1</span> -->
+	</button>
+
+	<button mat-stroked-button class="card-small" tabindex="1">
+		<mat-icon aria-hidden="false" aria-label="visibility icon">visibility</mat-icon>
+		<span style="padding-left: 10px;">{{selection}}</span>
+	</button>
+
+	<button mat-stroked-button class="card-small" (click)="next()" tabindex="2">
+		<mat-icon aria-hidden="false" aria-label="visibility icon">arrow_forward</mat-icon>
+	</button>
+	<!-- <button class="card card-small" (click)="selection = 9" tabindex="0">
+		<svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+		</svg>
+		<span>9</span>
+	</button>  -->
+</div>
+
+<!-- Terminal -->
+<div class="terminal" [ngSwitch]="selection" (mouseover)="play=false" (mouseout)="play=true">
+	<pre [@visibility]="visibility" *ngSwitchDefault>
+			<h3>1</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.	
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="2">
+			<h3>2</h3>
+			We are discovering again that we live in a deeply mysterious synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="3">
+			<h3>3</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="4">
+			<h3>4</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="5">
+			<h3>5</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="6">
+			<h3>6</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="7">
+			<h3>7</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="8">
+			<h3>8</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+	<pre [@visibility]="visibility" *ngSwitchCase="9">
+			<h3>9</h3>
+			We are discovering again that we live in a deeply mysterious world, full of sudden coincidences and synchronistic encounters that seem destined.
+		</pre>
+</div>
