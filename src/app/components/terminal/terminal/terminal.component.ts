@@ -31,15 +31,16 @@ export class TerminalComponent implements OnInit {
 	selection = 1;
 	play = true;
 	isOpen = true;
-	visibility = 'shown';
+	timer: number;
 
 	constructor() {}
 
 	public ngOnInit() {
-		setInterval(() => {
-			this.next();
-			this.visibility = this.visibility == 'shown' ? 'hidden' : 'shown';
-		}, 9000);
+		this.timer = window.setInterval(() => {
+			if (this.play) {
+				this.next();
+			}
+		}, 6000);
 	}
 
 	back() {
@@ -47,8 +48,10 @@ export class TerminalComponent implements OnInit {
 	}
 
 	next() {
-		if (this.selection < 9 && this.play) {
+		if (this.selection < 9) {
 			this.selection = this.selection + 1;
+		} else {
+			clearInterval(this.timer);
 		}
 	}
 }
