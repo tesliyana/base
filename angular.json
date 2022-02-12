@@ -24,7 +24,7 @@
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
 						"localize": [
-							"mk"
+							"en-US"
 						],
 						"aot": true,
 						"outputPath": "dist/tesla",
