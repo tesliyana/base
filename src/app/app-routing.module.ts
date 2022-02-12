@@ -17,7 +17,7 @@ const routes: Routes = [
 		path: 'home',
 		component: TerminalComponent
 	},
-	{ path: '', redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
+	{ path: '', redirectTo: '/home', pathMatch: 'full' }, 
 	{ path: '**', redirectTo: 'home' }
 ];
 
