@@ -6,7 +6,7 @@
 		"start": "ng serve --port 9630",
 		"start:mk": "ng serve --port 9630 --configuration=mk",
 		"build": "ng build --configuration=production --progress true --output-path docs --base-href /base/",
-		"postbuild": "copy docs\\index.html docs\\404.html",
+		"postbuild": "copy docs\\mk\\index.html docs\\mk\\404.html",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test"
 	},

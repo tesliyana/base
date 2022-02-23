@@ -18,13 +18,13 @@ const routes: Routes = [
 		path: 'home',
 		component: TerminalComponent
 	},
-	{
-		path: '',
-		component: AuthGuardPagesComponent,
-		// children: AuthGuardRoutes,
-		// canActivate: [AuthGuard],
-		data: { title: 'Auth Guard Pages' }
-	},
+	// {
+	// 	path: '',
+	// 	component: AuthGuardPagesComponent,
+	// 	// children: AuthGuardRoutes,
+	// 	// canActivate: [AuthGuard],
+	// 	data: { title: 'Auth Guard Pages' }
+	// },
 	// { path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: '**', component: AuthGuardPagesComponent }
 ];
@@ -33,7 +33,7 @@ const routes: Routes = [
 	imports: [
 		RouterModule.forRoot(routes, {
 			paramsInheritanceStrategy: 'always',
-			// enableTracing: true
+			enableTracing: true
 		})
 	],
 	exports: [RouterModule]
