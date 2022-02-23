@@ -17,12 +17,17 @@ const routes: Routes = [
 		path: 'home',
 		component: TerminalComponent
 	},
-	{ path: '', redirectTo: '/home', pathMatch: 'full' }, 
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [
+		RouterModule.forRoot(routes, {
+			paramsInheritanceStrategy: 'always',
+			enableTracing: true
+		})
+	],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}
