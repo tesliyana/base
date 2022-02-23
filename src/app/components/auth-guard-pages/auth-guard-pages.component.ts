@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
 
 @Component({
 	selector: 'app-auth-guard-pages',
@@ -8,16 +7,18 @@ import { DOCUMENT } from '@angular/common';
 	styleUrls: ['./auth-guard-pages.component.scss']
 })
 export class AuthGuardPagesComponent implements OnInit {
-	constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {}
+	constructor(private router: Router) {
+
+	}
 
 	ngOnInit(): void {
 		let url = this.router.url;
 		if (url === '/') {
 			this.router.navigate(['/home']);
-		} else if (url.startsWith('/mk')) {
-			console.log('Redirect to:', this.document.location.href);
+		} else if (url.startsWith('/mk') && !url.endsWith('#1')) {
+			console.log('Redirect to:', window.document.location.href);
 			// this.router.navigate([url]);
-			this.document.location.href = this.document.location.href;
+			window.document.location.href = window.document.location.href + '#1';
 		}
 	}
 }
