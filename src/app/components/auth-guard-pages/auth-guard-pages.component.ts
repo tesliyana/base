@@ -12,15 +12,15 @@ export class AuthGuardPagesComponent implements OnInit {
 	ngOnInit(): void {
 		let url = this.router.url;
 		if (url === '/') {
-			this.router.navigate(['/home']);
+			this.router.navigate(['home']);
 		} else if (url.startsWith('/mk') && url.indexOf('#') == -1) {
 			console.log('Redirect to:', window.document.location.href);
 			// this.router.navigate([url]);
-			window.document.location.href = window.document.location.origin + '/mk/' + '#welcome';
+			window.document.location.href = window.document.location.origin + '/base/mk/' + '#welcome';
 
 			// window.document.location.href = window.document.location.href + '#1';
-		} else if (url.startsWith('/mk')) {
-			this.router.navigate(['/welcome']);
+		} else if (url.startsWith('/#')) {
+			this.router.navigate(['welcome']);
 		}
 	}
 }
