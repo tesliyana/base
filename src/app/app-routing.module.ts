@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardPagesComponent } from './components/auth-guard-pages/auth-guard-pages.component';
 import { TerminalComponent } from './components/terminal/terminal/terminal.component';
 import { WelcomeComponent } from './components/terminal/welcome/welcome.component';
 
@@ -17,8 +18,15 @@ const routes: Routes = [
 		path: 'home',
 		component: TerminalComponent
 	},
-	{ path: '', redirectTo: '/home', pathMatch: 'full' },
-	{ path: '**', redirectTo: 'home' }
+	{
+		path: '',
+		component: AuthGuardPagesComponent,
+		// children: AuthGuardRoutes,
+		// canActivate: [AuthGuard],
+		data: { title: 'Auth Guard Pages' }
+	},
+	// { path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: '**', component: AuthGuardPagesComponent }
 ];
 
 @NgModule({
