@@ -235,16 +235,13 @@ class AuthGuardPagesComponent {
     }
     ngOnInit() {
         const url = this.router.url;
-        if (url === '/') {
-            this.router.navigate(['home']);
-        }
-        else if (url.startsWith('/#')) {
+        if (url.startsWith('/#')) {
             this.router.navigate([url.replace('#', '')]);
         }
         else if (url.split('/' + url.slice(1, 3) + '/')[0] == '') {
             const lang = url.slice(1, 3);
             let redirectTo = window.document.location.origin + src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseFeUrl + url.slice(1, 3);
-            //  if (url.startsWith('/mk') && url.indexOf('#') == -1) {
+            //  if (url.startsWith('mk') && there is no #) {
             if (languages.indexOf(lang) != -1 && url.indexOf('#') == -1) {
                 if (!!url.split('/' + lang + '/')[1]) {
                     redirectTo += '#' + url.split('/' + lang + '/')[1];
@@ -254,7 +251,8 @@ class AuthGuardPagesComponent {
             }
         }
         else {
-            console.log('Rarely reachable ELSE');
+            this.router.navigate(['home']);
+            // console.log('Rarely reachable ELSE');
         }
     }
 }

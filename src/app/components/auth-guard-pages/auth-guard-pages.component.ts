@@ -15,25 +15,23 @@ export class AuthGuardPagesComponent implements OnInit {
 	ngOnInit(): void {
 		const url = this.router.url;
 
-		if (url === '/') {
-			this.router.navigate(['home']);
-		} else if (url.startsWith('/#')) {
+		if (url.startsWith('/#')) {
 			this.router.navigate([url.replace('#', '')]);
 		} else if (url.split('/' + url.slice(1, 3) + '/')[0] == '') {
 			const lang = url.slice(1, 3);
 			let redirectTo = window.document.location.origin + environment.baseFeUrl + url.slice(1, 3);
-			//  if (url.startsWith('/mk') && url.indexOf('#') == -1) {
+			//  if (url.startsWith('mk') && there is no #) {
 			if (languages.indexOf(lang) != -1 && url.indexOf('#') == -1) {
 				if (!!url.split('/' + lang + '/')[1]) {
 					redirectTo += '#' + url.split('/' + lang + '/')[1];
 				}
 
 				console.log('Redirect to:', redirectTo);
-
 				window.document.location.href = redirectTo;
 			}
 		} else {
-			console.log('Rarely reachable ELSE');
+			this.router.navigate(['home']);
+			// console.log('Rarely reachable ELSE');
 		}
 	}
 }

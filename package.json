@@ -11,6 +11,7 @@
 		"build:mk": "ng build --configuration=mk --progress true --output-path docs-mk --base-href /base/",
 		"build:sr": "ng build --configuration=sr --progress true --output-path docs-sr --base-href /base/",
 		"postbuild": "xcopy /s \".\/docs-sr\\sr\" \".\/docs\\sr\" \/Y",
+		"postbuild:conc": "concurrently \"xcopy /s \".\/docs-sr\\sr\" \".\/docs\\sr\" \/Y\" \"copy docs\\sr\\index.html docs\\sr\\404.html\"",
 		"postbuild:mk": "copy docs\\mk\\index.html docs\\mk\\404.html",
 		"postbuild:sr": "copy docs\\mk\\index.html docs\\mk\\404.html",
 		"watch": "ng build --watch --configuration development",
