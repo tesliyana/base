@@ -240,10 +240,10 @@ class AuthGuardPagesComponent {
             this.router.navigate(['home']);
             // } else if (url.startsWith('/mk') && url.indexOf('#') == -1) {
         }
-        else if (languages.indexOf(lang) == -1 && url.indexOf('#') == -1) {
+        else if (languages.indexOf(lang) != -1 && url.indexOf('#') == -1) {
             console.log('Redirect to:', window.document.location.href);
             window.document.location.href =
-                window.document.location.origin + src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseFeUrl + url.slice(1, 3) + url.replace('#', '');
+                window.document.location.origin + src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseFeUrl + url;
         }
         else if (url.startsWith('/#')) {
             this.router.navigate([url.replace('#', '')]);
