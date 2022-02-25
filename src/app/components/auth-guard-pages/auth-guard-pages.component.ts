@@ -21,7 +21,7 @@ export class AuthGuardPagesComponent implements OnInit {
 		} else if (languages.indexOf(lang) != -1 && url.indexOf('#') == -1) {
 			let redirectTo = window.document.location.origin + environment.baseFeUrl + url.slice(1, 3);
 
-			if (!!''.split('/' + lang + '/')[1]) {
+			if (!!url.split('/' + lang + '/')[1]) {
 				redirectTo += '#' + url.split('/' + lang + '/')[1];
 			}
 

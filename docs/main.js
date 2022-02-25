@@ -242,7 +242,7 @@ class AuthGuardPagesComponent {
         }
         else if (languages.indexOf(lang) != -1 && url.indexOf('#') == -1) {
             let redirectTo = window.document.location.origin + src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseFeUrl + url.slice(1, 3);
-            if (!!''.split('/' + lang + '/')[1]) {
+            if (!!url.split('/' + lang + '/')[1]) {
                 redirectTo += '#' + url.split('/' + lang + '/')[1];
             }
             console.log('Redirect to:', redirectTo);
