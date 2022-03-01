@@ -5,11 +5,6 @@ import { TerminalComponent } from './components/terminal/terminal/terminal.compo
 import { WelcomeComponent } from './components/terminal/welcome/welcome.component';
 
 const routes: Routes = [
-	// {
-	// 	path: '*',
-	// 	redirectTo: '/home',
-	// 	pathMatch: 'full'
-	// },
 	{
 		path: 'welcome',
 		component: WelcomeComponent

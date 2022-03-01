@@ -16,8 +16,14 @@
 			"i18n": {
 				"sourceLocale": "en",
 				"locales": {
-					"mk": "src/locale/messages.mk.json",
-					"sr": "src/locale/messages.sr.json"
+					"mk": {
+						"translation": "src/locale/messages.mk.json",
+						"baseHref": ""
+					},
+					"sr": {
+						"translation": "src/locale/messages.sr.json",
+						"baseHref": ""
+					}
 				}
 			},
 			"architect": {
