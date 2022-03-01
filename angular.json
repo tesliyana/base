@@ -17,12 +17,10 @@
 				"sourceLocale": "en",
 				"locales": {
 					"mk": {
-						"translation": "src/locale/messages.mk.json",
-						"baseHref": ""
+						"translation": "src/locale/messages.mk.json"
 					},
 					"sr": {
-						"translation": "src/locale/messages.sr.json",
-						"baseHref": ""
+						"translation": "src/locale/messages.sr.json"
 					}
 				}
 			},

@@ -1,6 +1,7 @@
 {
-  "locale": "en-US",
-  "translations": {
-    "5348462650197353919": "PLEASE TRANSLATE THIS"
+	"locale": "en",
+	"translations": {
+	  "5026237356266442613": "Welcome to the Tesla app!",
+	  "5348462650197353919": "English translation!"
+	}
   }
-}
